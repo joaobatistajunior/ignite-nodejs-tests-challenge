@@ -88,7 +88,7 @@ describe("Create statements", () => {
         amount: 50000,
         description: "withdraw test"
       };
-      const statement = await createStatementUseCase.execute(newWithdrawInsufficientFunds);
+      await createStatementUseCase.execute(newWithdrawInsufficientFunds);
     }).rejects.toBeInstanceOf(CreateStatementError.InsufficientFunds)
   })
 
