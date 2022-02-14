@@ -1,5 +1,6 @@
 import { User } from "../../../users/entities/User";
 import { InMemoryUsersRepository } from "../../../users/repositories/in-memory/InMemoryUsersRepository";
+import { OperationType } from "../../enums/OperationType";
 import { InMemoryStatementsRepository } from "../../repositories/in-memory/InMemoryStatementsRepository";
 import { ICreateStatementDTO } from "../createStatement/ICreateStatementDTO";
 import { GetBalanceError } from "./GetBalanceError";
@@ -9,11 +10,6 @@ let getBalanceUseCase: GetBalanceUseCase;
 let statementsRepositoryInMemory: InMemoryStatementsRepository;
 let usersRepositoryInMemory: InMemoryUsersRepository;
 let user_id: string;
-
-enum OperationType {
-  DEPOSIT = 'deposit',
-  WITHDRAW = 'withdraw',
-}
 
 describe("Get Balance", () => {
 

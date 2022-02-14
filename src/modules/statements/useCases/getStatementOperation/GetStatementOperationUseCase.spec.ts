@@ -1,5 +1,6 @@
 import { InMemoryUsersRepository } from "../../../users/repositories/in-memory/InMemoryUsersRepository";
 import { Statement } from "../../entities/Statement";
+import { OperationType } from "../../enums/OperationType";
 import { InMemoryStatementsRepository } from "../../repositories/in-memory/InMemoryStatementsRepository";
 import { ICreateStatementDTO } from "../createStatement/ICreateStatementDTO";
 import { GetStatementOperationError } from "./GetStatementOperationError";
@@ -10,11 +11,6 @@ let getStatementOperationUseCase: GetStatementOperationUseCase;
 let statementsRepositoryInMemory: InMemoryStatementsRepository;
 let usersRepositoryInMemory: InMemoryUsersRepository;
 let user_id: string;
-
-enum OperationType {
-  DEPOSIT = 'deposit',
-  WITHDRAW = 'withdraw',
-}
 
 describe("Get Statement Operation", () => {
 
